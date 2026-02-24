@@ -11,6 +11,12 @@ const movieRouter = require("./routers/movies")
 const notFound = require("./middlewares/notFound")
 // error
 const error = require("./middlewares/error")
+// cors
+const cors = require("cors")
+
+app.use(cors({
+    origin: "http://localhost:5173"
+}))
 
 // body parser
 app.use(express.json());
