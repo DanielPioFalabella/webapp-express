@@ -38,13 +38,13 @@ function store(req,res) {
     const {id} = req.params
 
     // recupero le info dal body della request
-    const {} = req.body
+    const {name, text, vote, movie_id} = req.body
 
     // sql
     const sql = "INSERT INTO reviews (name, text, vote, movie_id) VALUE (?,?,?,?)"
 
     // query
-    connection.query(sql, [name, text, vote], (err, results) => {
+    connection.query(sql, [name, text, vote, id], (err, results) => {
         if (err) return res.status(500).json({error: "database query failed"})
             res.status(201)
         res.json({message: "review add", id:results.id})

@@ -11,7 +11,7 @@ router.get("/", movieControllers.index)
 router.get("/:id", movieControllers.show)
 
 // store
-router.post("/:id", movieControllers.store)
+router.post("/:id/reviews", movieControllers.store)
 
 // update
 
